@@ -3,4 +3,8 @@ class GroupsController < ApplicationController
         groups = Group.all
         render json: groups 
     end
+
+    # def 
+
+    # end
 end
