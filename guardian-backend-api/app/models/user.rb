@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    has_secure_password
     has_many :user_groups
     has_many :groups, through: :user_groups
     has_many :created_groups, :class_name => 'Group', :foreign_key => 'creator_id'
