@@ -31,7 +31,7 @@ event2 = Event.create!(title: "Meals on Wheels Meetup",description: "Meet at El 
 event3 = Event.create!(title: "Sandwiches at St. Vincent De Paul",description: "Help make sandwiches for those in need. All are welcome!",city: "Seattle", state: "Washington",street_address: '574 Turnip Road', event_date: '2020-12-17',image: 'https://tinyurl.com/ydbc63ro', group_id: group4.id)
 event4 = Event.create!(title: "Run to End Homelessness 5K",description: 'Break a sweat for a great cause! All proceeds go to local Baltimore shelters.',city: "Baltimore", state: 'Maryland',street_address: '4450 Forest Park Ave',event_date: '2020-06-19',image: 'https://tinyurl.com/yc2apu7a', group_id: group1.id )
 event5 = Event.create!(title: "May The 4th Help in Costume",description: "Hand out supplies to the homeless in your best Star Wars cosutme. Let's bring smiles to the faces of the unhoused! May the Fourth Be With You!",city: "San Francisco", state: "California", street_address: '540 Chevy Chase Blvd.',event_date: '2021-05-04',image: 'https://tinyurl.com/yasovd8e', group_id: group2.id)
-event7 = Event.create!(title: "Movies in The Park",description: "Large screening of 'Mr.Rogers' in the park. Be mindful of the unhoused population. We wan't to bring entertainment to ALL people", city: "Baltimore", state: "Maryland",street_address: '8097 St. James Place',event_date: '2020-07-29',image: 'https://tinyurl.com/yco6ntgz', group_id: group1.id)
+event6 = Event.create!(title: "Movies in The Park",description: "Large screening of 'Mr.Rogers' in the park. Be mindful of the unhoused population. We wan't to bring entertainment to ALL people", city: "Baltimore", state: "Maryland",street_address: '8097 St. James Place',event_date: '2020-07-29',image: 'https://tinyurl.com/yco6ntgz', group_id: group1.id)
 
 # USER_GROUPS
 us1 = UserGroup.create!(group_id: group1.id, member_id: u1.id)
@@ -46,3 +46,17 @@ us5 = UserGroup.create!(group_id: group1.id, member_id: u5.id)
 us6 = UserGroup.create!(group_id: group2.id, member_id: u1.id)
 us7 = UserGroup.create!(group_id: group3.id, member_id: u5.id)
 us8 = UserGroup.create!(group_id: group4.id, member_id: u4.id)
+
+# USER_Events
+ue1 = UserEvent.create!(event_id: event1.id, user_id: u1.id)
+ue2 = UserEvent.create!(event_id: event2.id, user_id: u2.id)
+ue3 = UserEvent.create!(event_id: event6.id, user_id: u3.id)
+ue4 = UserEvent.create!(event_id: event4.id, user_id: u3.id)
+ue5 = UserEvent.create!(event_id: event1.id, user_id: u3.id)
+ue6 = UserEvent.create!(event_id: event5.id, user_id: u4.id)
+ue7 = UserEvent.create!(event_id: event3.id, user_id: u2.id)
+ue8 = UserEvent.create!(event_id: event4.id, user_id: u6.id)
+ue5 = UserEvent.create!(event_id: event6.id, user_id: u5.id)
+ue6 = UserEvent.create!(event_id: event2.id, user_id: u1.id)
+ue7 = UserEvent.create!(event_id: event3.id, user_id: u5.id)
+ue8 = UserEvent.create!(event_id: event4.id, user_id: u4.id)
