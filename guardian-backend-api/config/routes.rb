@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :events
   resources :user_groups
   resources :groups
+
+  # user
   # resources :users
 #User Auth
   namespace :api do
