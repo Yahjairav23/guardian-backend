@@ -21,7 +21,7 @@
             <p>'Log In' using:</p>
             <br></br>
             <ul>
-             <li>username:demo  </li>
+             <li>username: demo </li>
              <li>password:demo</li>
             </ul>
 </br>
