@@ -16,6 +16,7 @@
 </br>
             <h4>To demo:</4>
 </br>  
+</br>
             <p>Click 'Sign Up' in the navigation bar </p>
             <p>or</p>
             <p>'Log In' using:</p>
