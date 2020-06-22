@@ -20,16 +20,43 @@ class Api::V1::UsersController < ApplicationController
 
       def create
         user = User.create(name: params[:name], username: params[:username], password: params[:password], bio: params[:bio], image: params[:image], city: params[:city], state: params[:state], age: params[:age], email: params[:email], birthday: params[:birthday])
-        if (user && user.authenticate(params[:password]))
+        if (user)
+          payload = {user: {id: user.id, user_id: user.id,username: params[:username], bio: params[:bio], image: params[:image],
+            city: params[:city], 
+            name: params[:name],
+            state: params[:state], 
+            age: params[:age], email: params[:email], 
+            birthday: params[:birthday],
+            groups: params[:groups],
+            events: params[:events]}}
+         
+         token = encode(payload)
+         new_hash={}
+         new_hash['user_data'] = payload
+         new_hash['token'] = token
+         render json: new_hash
           render json: user.to_json(:include => [
             :events, 
             :member_user_groups => {:include => :group}]
           ) 
         else
-          render json: { error: 'failed to create user' }
+          render json: { error: 'Failed to create user.' }
         end
       end
-
+    #   def create 
+    #     user = User.new(username: params[:username], password: params[:password], password_confirmation: params[:password_confirmation], avatar: params[:avatar])
+    #     if user.valid?
+    #         user.save
+    #         payload = {user: {user_id: user.id, username: params[:username], avatar: params[:avatar], tips: user.tips, case: user.cases}}
+    #         token = encode(payload)
+    #         new_hash={}
+    #         new_hash['user_data'] = payload
+    #         new_hash['token'] = token
+    #         render json: new_hash
+    #     else
+    #       render json: { error: 'All fields must not be blank. Password entries must match.'}
+    #     end
+    # end
 
       # def login 
       #   user = User.find_by(username: params[:username])
