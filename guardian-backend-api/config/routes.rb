@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :create]
       post '/sign-up', to: 'users#create'
       post '/login', to: 'auth#create'
+      get '/decode_token', to: 'users#parseToken'
       # get '/profile', to: 'users#profile'
     end
   end

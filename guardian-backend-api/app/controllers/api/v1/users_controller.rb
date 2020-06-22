@@ -8,9 +8,18 @@ class Api::V1::UsersController < ApplicationController
         ) 
     end
 
+    def parseToken 
+      token = request.headers["Authenticate"]
+      # byebug
+      user = User.find(decode(token)["user"]["user_id"])
+      render json: user.to_json(:include => [
+        :events, 
+        :member_user_groups => {:include => :group}]
+    ) 
+    end
+
       def create
         user = User.create(name: params[:name], username: params[:username], password: params[:password], bio: params[:bio], image: params[:image], city: params[:city], state: params[:state], age: params[:age], email: params[:email], birthday: params[:birthday])
-        # byebug
         if (user && user.authenticate(params[:password]))
           render json: user.to_json(:include => [
             :events, 
@@ -20,6 +29,7 @@ class Api::V1::UsersController < ApplicationController
           render json: { error: 'failed to create user' }
         end
       end
+
 
       # def login 
       #   user = User.find_by(username: params[:username])
