@@ -11,7 +11,7 @@ class Api::V1::AuthController < ApplicationController
              state: params[:state], 
              age: params[:age], email: params[:email], 
              birthday: params[:birthday],
-             groups: params[:groups],
+             member_user_groups: params[:member_user_groups],
              events: params[:events]}}
           
           token = encode(payload)

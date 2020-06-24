@@ -19,6 +19,7 @@ class Api::V1::UsersController < ApplicationController
     end
 
       def create
+        
         user = User.create(name: params[:name], username: params[:username], password: params[:password], bio: params[:bio], image: params[:image], city: params[:city], state: params[:state], age: params[:age], email: params[:email], birthday: params[:birthday])
         if (user)
           payload = {user: {id: user.id, user_id: user.id,username: params[:username], bio: params[:bio], image: params[:image],
@@ -27,18 +28,15 @@ class Api::V1::UsersController < ApplicationController
             state: params[:state], 
             age: params[:age], email: params[:email], 
             birthday: params[:birthday],
-            groups: params[:groups],
-            events: params[:events]}}
-         
+            member_user_groups: user.member_user_groups,
+            events: user.events}}
+          
          token = encode(payload)
          new_hash={}
          new_hash['user_data'] = payload
          new_hash['token'] = token
          render json: new_hash
-          render json: user.to_json(:include => [
-            :events, 
-            :member_user_groups => {:include => :group}]
-          ) 
+    
         else
           render json: { error: 'Failed to create user.' }
         end
