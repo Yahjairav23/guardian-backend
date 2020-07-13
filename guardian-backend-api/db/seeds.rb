@@ -18,7 +18,7 @@ u3 = User.create!(name: "Chine", username: "dog4lyfe", password: 'Password', ema
 u4 = User.create!(name: "Ann", username: "poke.ann", password: 'Password', email: "ann@gmail.com", age: 38, birthday: "1982-05-18", city: "Arlington", state: "Virginia", bio: "We can end homelessness", image: "https://i.picsum.photos/id/1062/5092/3395.jpg")
 u5 = User.create!(name: "Paul", username: "bookworm", password: 'Password', email: "paul@gmail.com", age: 40, birthday: "1980-01-26", city: "Bethesda", state: "Maryland", bio: "Helping people off the streets!", image: "https://i.picsum.photos/id/464/3198/2230.jpg")
 u6 = User.create!(name: "Tim", username: "chillin_tim", password: 'Password', email: "tim@gmail.com", age: 39, birthday: "1981-09-28", city: "Albany", state: "New York", bio: "Together we can!", image: "https://i.picsum.photos/id/103/2592/1936.jpg")
-u6 = User.create!(name: "Sarah", username: "demo", password: 'demo', email: "demo@demo.com", age: 39, birthday: "1981-09-28", city: "Albany", state: "New York", bio: "Together we can!", image: "https://i.picsum.photos/id/103/2592/1936.jpg")
+u6 = User.create!(name: "Sarah", username: "demo", password: 'demo', email: "demo@demo.com", age: 39, birthday: "1981-09-28", city: "Albany", state: "New York", bio: "Together we can!", image: "https://miro.medium.com/max/3072/1*o-UCEnQ3VRCrHjI8cx4JBQ.jpeg")
 
 # GROUPS
 group1 = Group.create!(name: 'B-more Angels', city: 'Baltimore', state: 'Maryland', email:'bmoreangels@demo.com', phone:'4102097155', about: 'Focused on serving the Greater Baltimore Area', image: 'https://tinyurl.com/y938gt7o' , creator_id: u1.id)
