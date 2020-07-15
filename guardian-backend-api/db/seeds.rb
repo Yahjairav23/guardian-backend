@@ -27,16 +27,16 @@ group3 = Group.create!(name: 'ServeSI', city: 'Staten Island', state: 'New York'
 group4 = Group.create!(name: 'Buddies', city: 'Seattle', state: 'Washington', email:'becomeabuddy@demo.com', phone:'2067448383', about: 'Join our Group and Become a Buddy to Those In Need',image: 'https://tinyurl.com/yac4rtkq', creator_id: u5.id)
 
 #EVENTS
-event1 = Event.create!(title: "Sunday Funday", description: 'Take a break from service with a group meetup at the Ale House.',city: "San Fracisco", state: "California", street_address: '2200 Old Glen Way', event_date: '2020-05-31',image: 'https://tinyurl.com/yaph9ptd', group_id: group2.id)
-event2 = Event.create!(title: "Meals on Wheels Meetup",description: "Meet at El Ray High School for meal prep and delivery. Invite your friends!",city: "Staten Island", state: "New York", street_address: '6540 Cole Street', event_date: '2020-05-31',image: 'https://tinyurl.com/y89fyybj', group_id: group3.id)
+event1 = Event.create!(title: "Sunday Funday", description: 'Take a break from service with a group meetup at the Ale House.',city: "San Fracisco", state: "California", street_address: '2200 Old Glen Way', event_date: '2020-08-31',image: 'https://tinyurl.com/yaph9ptd', group_id: group2.id)
+event2 = Event.create!(title: "Meals on Wheels Meetup",description: "Meet at El Ray High School for meal prep and delivery. Invite your friends!",city: "Staten Island", state: "New York", street_address: '6540 Cole Street', event_date: '2020-08-31',image: 'https://tinyurl.com/y89fyybj', group_id: group3.id)
 event3 = Event.create!(title: "Sandwiches at St. Vincent De Paul",description: "Help make sandwiches for those in need. All are welcome!",city: "Seattle", state: "Washington",street_address: '574 Turnip Road', event_date: '2020-12-17',image: 'https://tinyurl.com/ydbc63ro', group_id: group4.id)
-event4 = Event.create!(title: "Run to End Homelessness 5K",description: 'Break a sweat for a great cause! All proceeds go to local Baltimore shelters.',city: "Baltimore", state: 'Maryland',street_address: '4450 Forest Park Ave',event_date: '2020-06-19',image: 'https://tinyurl.com/yc2apu7a', group_id: group1.id )
+event4 = Event.create!(title: "Run to End Homelessness 5K",description: 'Break a sweat for a great cause! All proceeds go to local Baltimore shelters.',city: "Baltimore", state: 'Maryland',street_address: '4450 Forest Park Ave',event_date: '2020-07-19',image: 'https://tinyurl.com/yc2apu7a', group_id: group1.id )
 event5 = Event.create!(title: "May The 4th Help in Costume",description: "Hand out supplies to the homeless in your best Star Wars cosutme. Let's bring smiles to the faces of the unhoused! May the Fourth Be With You!",city: "San Francisco", state: "California", street_address: '540 Chevy Chase Blvd.',event_date: '2021-05-04',image: 'https://tinyurl.com/yasovd8e', group_id: group2.id)
 event6 = Event.create!(title: "Movies in The Park",description: "Large screening of 'Mr.Rogers' in the park. Be mindful of the unhoused population. We wan't to bring entertainment to ALL people", city: "Baltimore", state: "Maryland",street_address: '8097 St. James Place',event_date: '2020-07-29',image: 'https://tinyurl.com/yco6ntgz', group_id: group1.id)
 event7 = Event.create!(title: "Need Help with 33rd Street Tent Community", description: 'Help the homeless on 33rd Street living in the tent communities.', city: "San Fracisco", state: "California", street_address: '33rd Street', event_date: '2020-07-29',image: 'https://tinyurl.com/ybwcnkty', group_id: group2.id)
 event8 = Event.create!(title: "Seattle Soup Kitchen",description: "Meet at St. Joseph's to prepare meals for the homeless. Invite your friends!",city: "Seattle", state: "Washington", street_address: '2208 Mobley Way', event_date: '2020-07-23',image: 'https://tinyurl.com/ycc8f377', group_id: group4.id)
 event9 = Event.create!(title: "Supply Drive",description: "Bring in any hygiene resources for those in need.", city: "Seattle", state: "Washington",street_address: '870 JC Road', event_date: '2020-07-25',image: 'https://tinyurl.com/ybhx2nzp', group_id: group4.id)
-event10 = Event.create!(title: "Food Drive on Greenmount Ave",description: 'Help supply to the homeless!',city: "Baltimore", state: 'Maryland',street_address: '9900 Hosier Ave',event_date: '2020-07-19',image: 'https://tinyurl.com/y7xphpac', group_id: group1.id )
+event10 = Event.create!(title: "Food Drive on Greenmount Ave",description: 'Help supply to the homeless!',city: "Baltimore", state: 'Maryland',street_address: '9900 Hosier Ave',event_date: '2020-07-28',image: 'https://tinyurl.com/y7xphpac', group_id: group1.id )
 
 # USER_GROUPS
 us1 = UserGroup.create!(group_id: group1.id, member_id: u1.id)
@@ -47,10 +47,10 @@ us5 = UserGroup.create!(group_id: group1.id, member_id: u3.id)
 us6 = UserGroup.create!(group_id: group2.id, member_id: u4.id)
 us7 = UserGroup.create!(group_id: group3.id, member_id: u2.id)
 us8 = UserGroup.create!(group_id: group4.id, member_id: u6.id)
-us5 = UserGroup.create!(group_id: group1.id, member_id: u5.id)
-us6 = UserGroup.create!(group_id: group2.id, member_id: u1.id)
-us7 = UserGroup.create!(group_id: group3.id, member_id: u5.id)
-us8 = UserGroup.create!(group_id: group4.id, member_id: u4.id)
+us9 = UserGroup.create!(group_id: group1.id, member_id: u5.id)
+us10 = UserGroup.create!(group_id: group2.id, member_id: u1.id)
+us11 = UserGroup.create!(group_id: group3.id, member_id: u5.id)
+us12 = UserGroup.create!(group_id: group4.id, member_id: u4.id)
 
 # USER_Events
 ue1 = UserEvent.create!(event_id: event1.id, user_id: u1.id)
