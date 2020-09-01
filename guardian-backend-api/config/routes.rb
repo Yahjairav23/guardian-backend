@@ -1,20 +1,16 @@
 Rails.application.routes.draw do
-  resources :user_events
-  resources :events
-  resources :user_groups
-  resources :groups
+  resources :user_events, only: [:index, :create]
+  resources :events, only: [:index]
+  resources :user_groups, only: [:index, :show, :create, :destroy]
+  resources :groups, only: [:index, :create]
 
-  # user
-  # resources :users
-#User Auth
+  
   namespace :api do
     namespace :v1 do
       resources :users, only: [:index, :create]
       post '/sign-up', to: 'users#create'
       post '/login', to: 'auth#create'
       get '/decode_token', to: 'users#parseToken'
-      # get '/profile', to: 'users#profile'
     end
   end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
