@@ -10,7 +10,6 @@ class Api::V1::UsersController < ApplicationController
 
     def parseToken 
       token = request.headers["Authenticate"]
-      # byebug
       user = User.find(decode(token)["user"]["user_id"])
       render json: user.to_json(:include => [
         :events, 
@@ -41,32 +40,7 @@ class Api::V1::UsersController < ApplicationController
           render json: { error: 'Failed to create user.' }
         end
       end
-    #   def create 
-    #     user = User.new(username: params[:username], password: params[:password], password_confirmation: params[:password_confirmation], avatar: params[:avatar])
-    #     if user.valid?
-    #         user.save
-    #         payload = {user: {user_id: user.id, username: params[:username], avatar: params[:avatar], tips: user.tips, case: user.cases}}
-    #         token = encode(payload)
-    #         new_hash={}
-    #         new_hash['user_data'] = payload
-    #         new_hash['token'] = token
-    #         render json: new_hash
-    #     else
-    #       render json: { error: 'All fields must not be blank. Password entries must match.'}
-    #     end
-    # end
-
-      # def login 
-      #   user = User.find_by(username: params[:username])
-      #   # byebug
-      #   if (user && user.authenticate(params[:password]))
-      #     render json: user
-      #   else
-      #     render json: { error: 'Username or Password is incorrect' }
-      #   end
-      # end
-
-    
+  
       private
 
       def user_params
